@@ -1,0 +1,763 @@
+:root{
+  --navy:#10314F;
+  --navy-deep:#0B2338;
+  --blue:#2B6FB0;
+  --blue-light:#EAF2FA;
+  --paper:#FBFBF9;
+  --ink:#20303F;
+  --muted:#5B6B7A;
+  --line:#DCE6EE;
+  --white:#FFFFFF;
+}
+
+*{box-sizing:border-box; margin:0; padding:0;}
+
+html{
+  -webkit-text-size-adjust:100%;
+}
+
+body{
+  font-family:'Inter', system-ui, sans-serif;
+  color:var(--ink);
+  background:var(--paper);
+  line-height:1.55;
+  overflow-x:hidden;
+  width:100%;
+}
+
+h1, h2, h3{
+  font-family:'Source Serif 4', Georgia, serif;
+  color:var(--navy-deep);
+  font-weight:700;
+  line-height:1.15;
+}
+
+img{max-width:100%; display:block;}
+a{color:inherit; text-decoration:none;}
+
+.wrap{max-width:1180px; margin:0 auto; padding:0 32px; width:100%;}
+
+/* ---------- Hero welcome badge ---------- */
+.hero-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  background:var(--white);
+  border:1px solid var(--line);
+  border-radius:999px;
+  padding:8px 18px;
+  font-size:.85rem;
+  font-weight:500;
+  color:var(--navy-deep);
+  margin-bottom:20px;
+  box-shadow:0 2px 8px rgba(16,49,79,0.05);
+}
+
+/* ---------- Header ---------- */
+header{
+  position:sticky; top:0; z-index:20;
+  background:rgba(251,251,249,0.94);
+  backdrop-filter:blur(6px);
+  border-bottom:1px solid var(--line);
+}
+
+.nav{display:flex; align-items:center; justify-content:space-between; padding:16px 20px; gap:16px; flex-wrap:nowrap; position:relative;}
+
+.brand{display:flex; flex-direction:column; gap:2px; min-width:0;}
+
+.brand-name{
+  font-family:'Source Serif 4', serif; font-weight:700;
+  font-size:clamp(1.05rem, 3vw, 1.3rem);
+  color:var(--navy-deep);
+  letter-spacing:.01em;
+  white-space:nowrap;
+}
+.brand-accent{color:var(--blue);}
+.brand-tag{font-size:.72rem; color:var(--muted); white-space:nowrap;}
+
+/* --- Nav panel: holds the links + CTA together (collapses on mobile) --- */
+.nav-panel{display:flex; align-items:center; gap:34px;}
+.nav-cta{flex:none;}
+
+/* --- Hamburger toggle button (hidden on desktop) --- */
+.nav-toggle{
+  display:none;
+  background:none;
+  border:none;
+  font-size:20px;
+  color:var(--navy-deep);
+  cursor:pointer;
+  padding:6px 8px;
+  flex:none;
+}
+
+nav.links{display:flex; gap:34px; font-size:.95rem; font-weight:500; color:var(--navy-deep);}
+nav.links a{padding-bottom:4px; border-bottom:2px solid transparent; transition:border-color .15s ease;}
+nav.links a.active, nav.links a:hover{border-color:var(--blue);}
+
+.btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:8px;
+  padding:12px 22px; border-radius:8px;
+  font-weight:600; font-size:.92rem;
+  border:1px solid transparent;
+  cursor:pointer;
+  white-space:nowrap;
+  flex:none;
+  transition:background-color .15s ease;
+}
+.btn-primary{background:var(--navy); color:var(--white);}
+.btn-primary:hover{background:var(--navy-deep);}
+.btn-ghost{background:transparent; border-color:var(--navy); color:var(--navy-deep);}
+.btn-ghost:hover{background:var(--blue-light);}
+.btn-light{background:var(--white); color:var(--navy-deep);}
+.btn-light:hover{background:#EFF5FA;}
+
+/* ---------- Hero ---------- */
+.hero{
+  background:linear-gradient(180deg, var(--blue-light) 0%, #F3F8FC 100%);
+  padding:76px 0 64px;
+  border-bottom:1px solid var(--line);
+}
+.hero-grid{display:grid; grid-template-columns:1fr auto 1fr; gap:48px; align-items:center;}
+
+.eyebrow{font-size:.8rem; color:var(--blue); font-weight:600; margin-bottom:16px; letter-spacing:.01em;}
+.eyebrow-light{color:#7FB2E6;}
+
+.hero h1{font-size:3rem; margin-bottom:20px;}
+.hero-right-title{font-size:1.8rem; margin-bottom:14px;}
+.lead{color:var(--muted); font-size:1.05rem; max-width:46ch; margin-bottom:28px;}
+.lead.center{margin-left:auto; margin-right:auto;}
+.lead-light{color:#C6D5E2;}
+
+.hero-actions{display:flex; gap:14px; flex-wrap:wrap;}
+
+.hero-divider{width:1px; align-self:stretch; background:var(--line);}
+
+.hero-facts{
+  list-style:none;
+  display:flex; flex-direction:column; gap:16px;
+  margin-top:26px;
+}
+.hero-facts li{
+  display:flex; gap:12px; align-items:center;
+  font-size:.98rem; color:var(--navy-deep); font-weight:500;
+}
+.hero-facts .check{
+  flex:none; width:22px; height:22px; border-radius:50%;
+  background:var(--blue);
+  display:flex; align-items:center; justify-content:center;
+}
+
+/* ---------- Sections ---------- */
+.section{padding:80px 0;}
+.section-head{max-width:640px; margin-bottom:48px;}
+.section-head.center{max-width:560px; margin-left:auto; margin-right:auto; text-align:center;}
+.section-head h2{font-size:2.1rem; margin-bottom:12px;}
+
+.services-grid{
+  display:grid; grid-template-columns:repeat(6, 1fr); gap:0;
+}
+.service-card{
+  padding:0 20px; text-align:center;
+  border-left:1px solid var(--line);
+}
+.service-card:first-child{border-left:none;}
+.service-icon{
+  width:56px; height:56px; border-radius:50%;
+  background:var(--blue-light);
+  display:flex; align-items:center; justify-content:center;
+  margin:0 auto 18px;
+}
+.service-card h3{font-family:'Inter', sans-serif; font-size:1rem; font-weight:600; color:var(--navy-deep); margin-bottom:8px;}
+.service-card p{color:var(--muted); font-size:.86rem;}
+
+/* ---------- Why Choose Us ---------- */
+.why {
+    background: #0b263d;
+}
+.why-grid {
+    display: grid;
+    grid-template-columns: 43% 57%;
+    align-items: center;
+    gap: 35px;
+    padding: 25px 70px;
+}
+
+.why-copy {
+    color: var(--white);
+    padding: 25px 30px 25px 0;
+}
+
+.why-copy h2 {
+    color: var(--white);
+    font-size: 1.8rem;
+    margin-bottom: 14px;
+}
+
+.why-copy > .lead {
+    margin-bottom: 26px;
+}
+
+.why-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px 24px;
+}
+
+.why-photo {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 10px 0 35px;
+}
+
+.why-photo img {
+    width: 100%;
+    max-width: 680px;
+    height: 350px;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+/* ---------- Why Choose Us ---------- */
+.why {
+    background: #0b263d;
+}
+.why-grid {
+    display: grid;
+    grid-template-columns: 43% 57%;
+    align-items: center;
+    gap: 35px;
+    padding: 25px 70px;
+}
+
+.why-copy {
+    color: var(--white);
+    padding: 25px 30px 25px 0;
+}
+
+.why-copy h2 {
+    color: var(--white);
+    font-size: 1.8rem;
+    margin-bottom: 14px;
+}
+
+.why-copy > .lead {
+    margin-bottom: 26px;
+}
+
+.why-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px 24px;
+}
+
+.why-photo {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 10px 0 35px;
+}
+
+.why-photo img {
+    width: 100%;
+    max-width: 680px;
+    height: 350px;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+/* ---------- Why choose us: preserved item-box styling ----------
+   Not part of the block you supplied above, kept as-is so the four
+   feature boxes (Experienced Team / Advanced Technology / Safe & Clean
+   Environment / 24/7 Support) don't lose their icon-circle styling. */
+.why-item{display:flex; gap:14px; align-items:flex-start;}
+.why-item .ic{
+  flex:none; width:38px; height:38px; border-radius:9px;
+  background:rgba(255,255,255,.1);
+  display:flex; align-items:center; justify-content:center;
+}
+.why-item h4{font-size:.98rem; font-weight:600; color:var(--white); margin-bottom:4px;}
+.why-item p{font-size:.86rem; color:#AFC3D4;}
+
+/* ---------- CTA band ---------- */
+.cta-band{background:var(--blue); color:var(--white);}
+.cta-grid{
+  display:flex; align-items:center; justify-content:space-between;
+  padding:36px 32px; gap:24px; flex-wrap:wrap;
+}
+.cta-band h3{color:var(--white); font-family:'Inter', sans-serif; font-size:1.3rem; font-weight:700;}
+.cta-band p{color:#E1EDFA; font-size:.92rem; margin-top:4px;}
+
+/* ---------- Icons (Font Awesome) ---------- */
+.btn-icon{font-size:.95em;}
+
+.hero-facts .check i{color:#fff; font-size:.65rem;}
+
+.service-icon i{font-size:20px; color:var(--blue);}
+
+.why-item .ic i{color:#fff; font-size:15px;}
+
+.input-icon{font-size:16px;}
+.select-caret{font-size:13px;}
+
+.f-social a i{font-size:14px;}
+
+/* ---------- Footer ---------- */
+footer{background:var(--navy-deep); color:#9FB4C6; padding:48px 0 28px; font-size:.9rem;}
+.footer-top{
+  display:flex; justify-content:space-between; flex-wrap:wrap; gap:24px;
+  padding-bottom:24px; border-bottom:1px solid rgba(255,255,255,.1);
+}
+.f-brand{color:var(--white); font-family:'Source Serif 4', serif; font-weight:700; font-size:1.05rem;}
+.f-desc{margin-top:6px; max-width:32ch;}
+.f-links{display:flex; gap:28px; flex-wrap:wrap; align-items:center;}
+.f-social{display:flex; gap:14px; align-items:center;}
+.f-social a{
+  width:34px; height:34px; border-radius:50%;
+  border:1px solid rgba(255,255,255,.2);
+  display:flex; align-items:center; justify-content:center;
+  color:#C6D5E2; transition:background-color .15s ease;
+}
+.f-social a:hover{background:rgba(255,255,255,.1);}
+.f-bottom{
+  padding-top:20px; display:flex; justify-content:space-between;
+  flex-wrap:wrap; gap:10px; font-size:.82rem;
+}
+
+/* ==========================================================================
+   BOOK APPOINTMENT FORM
+   Edit only within this block to change the booking page's look.
+   ========================================================================== */
+
+/* --- Page wrapper / background around the card --- */
+.booking-section{
+  padding:64px 0 96px;
+}
+
+/* --- The white card that holds the whole form --- */
+.booking-card{
+  max-width:640px;
+  margin:0 auto;
+  background:var(--white);
+  border:1px solid var(--line);
+  border-radius:16px;
+  overflow:hidden;
+  box-shadow:0 8px 30px rgba(16,49,79,0.06);
+}
+
+/* --- Light blue header banner: title + subtitle --- */
+.booking-card-head{
+  background:linear-gradient(180deg, var(--blue-light) 0%, #F3F8FC 100%);
+  padding:40px 40px 32px;
+  text-align:center;
+  border-bottom:1px solid var(--line);
+}
+.booking-card-head h1{
+  font-size:2rem;
+  color:var(--navy-deep);
+  margin-bottom:10px;
+}
+.booking-card-head p{
+  color:var(--muted);
+  font-size:.98rem;
+  max-width:40ch;
+  margin:0 auto;
+}
+
+/* --- Form body spacing --- */
+.booking-form{
+  padding:36px 40px 40px;
+  display:flex;
+  flex-direction:column;
+  gap:24px;
+}
+
+/* --- Each field block (label + input) --- */
+.form-group{display:flex; flex-direction:column; gap:8px;}
+
+.form-group label{
+  font-size:.92rem;
+  font-weight:600;
+  color:var(--navy-deep);
+}
+.form-group label .req{color:#D64545; margin-left:2px;}
+.form-group label .opt{color:var(--muted); font-weight:500; font-size:.85rem;}
+
+/* --- Two-column row for Date + Time on wider screens --- */
+.form-row{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:24px;
+}
+
+/* --- Input / select shell (icon + field together) --- */
+.input-wrap{
+  position:relative;
+  display:flex;
+  align-items:center;
+}
+.input-icon{
+  position:absolute;
+  left:16px;
+  color:var(--blue);
+  pointer-events:none;
+  flex:none;
+}
+.select-caret{
+  position:absolute;
+  right:16px;
+  color:var(--muted);
+  pointer-events:none;
+  flex:none;
+}
+
+/* --- Text / tel / date inputs and selects, shared styling --- */
+.input-wrap input,
+.input-wrap select{
+  width:100%;
+  height:52px;
+  padding:0 16px 0 46px;
+  border:1px solid var(--line);
+  border-radius:10px;
+  background:var(--white);
+  font-family:'Inter', sans-serif;
+  font-size:.95rem;
+  color:var(--ink);
+  appearance:none;
+  -webkit-appearance:none;
+  transition:border-color .15s ease, box-shadow .15s ease;
+}
+.input-wrap select{padding-right:44px; cursor:pointer;}
+.input-wrap input::placeholder{color:#9BAAB8;}
+
+.input-wrap input:focus,
+.input-wrap select:focus{
+  outline:none;
+  border-color:var(--blue);
+  box-shadow:0 0 0 3px rgba(43,111,176,0.14);
+}
+
+/* --- Helper note under the optional date/time fields --- */
+.form-hint{
+  font-size:.85rem;
+  color:var(--muted);
+  margin-top:-8px;
+}
+
+/* --- Full-width submit button --- */
+.btn-block{
+  width:100%;
+  justify-content:center;
+  padding:15px 22px;
+  font-size:1rem;
+  margin-top:4px;
+}
+
+/* --- Result box: shown after submitting (confirmation or queue number) --- */
+.booking-result{
+  margin-top:22px;
+  padding:20px;
+  border-radius:12px;
+  background:var(--blue-light);
+  border:1px solid var(--line);
+  display:flex;
+  gap:14px;
+  align-items:flex-start;
+}
+.booking-result i{color:var(--blue); font-size:22px; margin-top:2px; flex:none;}
+.booking-result strong{color:var(--navy-deep); display:block; margin-bottom:4px;}
+.booking-result p{color:var(--muted); font-size:.9rem; margin-top:6px;}
+.booking-result .queue-number{
+  font-size:1.05rem;
+  color:var(--navy-deep);
+  font-weight:600;
+}
+.booking-result .queue-number span{color:var(--blue); font-size:1.25rem;}
+
+/* --- Error variant (used by login/signup failure messages) --- */
+.booking-result.error{background:#FCEAEA; border-color:#F3C6C6;}
+.booking-result.error i{color:#D64545;}
+
+/* --- Responsive: stack the date/time row on smaller screens --- */
+@media (max-width:600px){
+  .booking-section{padding:40px 0 64px;}
+  .booking-card{border-radius:14px;}
+  .booking-card-head{padding:32px 24px 26px;}
+  .booking-card-head h1{font-size:1.6rem;}
+  .booking-form{padding:28px 24px 32px; gap:20px;}
+  .form-row{grid-template-columns:1fr; gap:20px;}
+}
+
+/* --- Doctor picker: shown after "Find a Doctor" is submitted, before an
+   appointment is actually created. Lets the patient pick one specific
+   doctor rather than the appointment going to a whole specialty. --- */
+.doctor-picker{margin-top:20px;}
+.doctor-picker-head{
+  display:flex; align-items:center; gap:8px;
+  font-size:.9rem; font-weight:600; color:var(--navy-deep);
+  margin-bottom:14px;
+}
+.doctor-picker-head i{color:var(--blue);}
+
+.doctor-pick-list{display:flex; flex-direction:column; gap:12px;}
+.doctor-pick-card{
+  display:flex; align-items:center; gap:14px;
+  border:1px solid var(--line); border-radius:12px;
+  padding:14px 16px; background:var(--white);
+}
+.doctor-pick-avatar{
+  width:40px; height:40px; border-radius:50%; flex:none;
+  background:var(--blue-light); color:var(--blue);
+  display:flex; align-items:center; justify-content:center; font-size:16px;
+}
+.doctor-pick-info{flex:1; min-width:0; display:flex; flex-direction:column; gap:4px;}
+.doctor-pick-info strong{color:var(--navy-deep); font-size:.92rem;}
+.doctor-pick-info span{color:var(--muted); font-size:.8rem;}
+
+/* ==========================================================================
+   END BOOK APPOINTMENT FORM
+   ========================================================================== */
+/* ---------- Responsive ---------- */
+@media (max-width:960px){
+  nav.links{display:none;}
+  .nav-toggle{display:inline-flex; align-items:center; justify-content:center;}
+  .nav-panel{
+    display:flex;
+    flex-direction:column;
+    align-items:stretch;
+    gap:0;
+    position:absolute;
+    top:100%;
+    left:0;
+    right:0;
+    background:var(--white);
+    border-bottom:1px solid var(--line);
+    box-shadow:0 12px 24px rgba(16,49,79,0.08);
+    max-height:0;
+    overflow:hidden;
+    opacity:0;
+    transition:max-height .25s ease, opacity .2s ease;
+  }
+  .nav-panel.open{max-height:420px; opacity:1; padding-bottom:16px;}
+  .nav-panel .links{display:flex; flex-direction:column; gap:0; width:100%;}
+  .nav-panel .links a{
+    padding:14px 24px;
+    border-bottom:1px solid var(--line);
+    border-bottom-width:1px;
+    width:100%;
+  }
+  .nav-panel .links a.active, .nav-panel .links a:hover{
+    background:var(--blue-light);
+    border-color:var(--line);
+  }
+  .nav-cta{margin:14px 24px 0;}
+  .hero-grid{grid-template-columns:1fr; gap:36px;}
+  .hero-divider{display:none;}
+  .services-grid{grid-template-columns:repeat(3, 1fr); row-gap:32px;}
+  .service-card{border-left:none;}
+  .why-grid{grid-template-columns:1fr; padding-left:0; padding-right:0;}
+  .why-copy{padding:48px 20px;}
+  .why-list{grid-template-columns:1fr;}
+  .why-photo{order:-1;}
+  .why-photo img{width:100%; height:260px; min-height:0; object-fit:cover; border-radius:0; display:block;}
+}
+
+@media (max-width:600px){
+  .wrap{padding:0 20px;}
+  .hero-badge{font-size:.78rem; padding:7px 14px;}
+  .hero{padding:48px 0 40px;}
+  .section{padding:56px 0;}
+  .hero h1{font-size:2.1rem;}
+  .hero-right-title{font-size:1.5rem;}
+  .services-grid{grid-template-columns:1fr 1fr; row-gap:28px; column-gap:12px;}
+  .service-icon{width:48px; height:48px;}
+  .cta-grid{flex-direction:column; align-items:flex-start; padding:28px 20px;}
+  .footer-top{flex-direction:column; align-items:flex-start;}
+  .f-links{gap:16px;}
+  .f-bottom{flex-direction:column; align-items:flex-start; gap:6px;}
+}
+
+@media (max-width:380px){
+  .services-grid{grid-template-columns:1fr;}
+  .hero-actions{flex-direction:column; align-items:stretch;}
+  .hero-actions .btn{width:100%;}
+}
+
+/* ==========================================================================
+   DOCTOR DASHBOARD
+   Edit only within this block to change the dashboard's look.
+   ========================================================================== */
+
+/* --- Page wrapper --- */
+.dashboard-section{padding:40px 0 80px;}
+
+/* --- Top bar: doctor identity + live badge --- */
+.dashboard-topbar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:16px;
+  margin-bottom:28px;
+}
+.doctor-info{display:flex; align-items:center; gap:14px;}
+.doctor-avatar{
+  width:52px; height:52px; border-radius:50%;
+  background:var(--blue-light); color:var(--blue);
+  display:flex; align-items:center; justify-content:center;
+  font-size:20px; flex:none;
+}
+.doctor-info h2{font-size:1.3rem; margin-bottom:2px;}
+.doctor-info p{color:var(--muted); font-size:.88rem;}
+
+.live-badge{
+  display:inline-flex; align-items:center; gap:7px;
+  font-size:.8rem; font-weight:600;
+  color:#1F9254; background:#E7F7EE; border:1px solid #BEE7CF;
+  padding:6px 14px; border-radius:999px;
+}
+.live-badge .dot{width:7px; height:7px; border-radius:50%; background:#1F9254; animation:cw-pulse 1.6s infinite;}
+@keyframes cw-pulse{0%,100%{opacity:1;} 50%{opacity:.3;}}
+
+/* --- Stat cards row --- */
+.stats-grid{display:grid; grid-template-columns:repeat(3, 1fr); gap:20px; margin-bottom:28px;}
+.stat-card{
+  background:var(--white); border:1px solid var(--line); border-radius:14px;
+  padding:22px; display:flex; align-items:center; gap:16px;
+}
+.stat-icon{
+  width:48px; height:48px; border-radius:12px;
+  background:var(--blue-light); color:var(--blue);
+  display:flex; align-items:center; justify-content:center;
+  font-size:20px; flex:none;
+}
+.stat-value{font-family:'Source Serif 4', serif; font-size:1.6rem; font-weight:700; color:var(--navy-deep);}
+.stat-label{color:var(--muted); font-size:.85rem;}
+
+/* --- Main two-panel layout: Now Serving + Up Next --- */
+.dashboard-grid{display:grid; grid-template-columns:1fr 1.2fr; gap:22px; align-items:start;}
+
+.panel{background:var(--white); border:1px solid var(--line); border-radius:14px; padding:26px;}
+.panel-title{
+  font-family:'Inter', sans-serif; font-size:1rem; font-weight:600; color:var(--navy-deep);
+  display:flex; align-items:center; justify-content:space-between;
+  margin-bottom:20px;
+}
+.queue-count-badge{
+  background:var(--blue-light); color:var(--blue);
+  font-size:.78rem; font-weight:700;
+  padding:4px 12px; border-radius:999px;
+}
+
+/* --- "Now Serving" current patient card --- */
+.current-patient{display:flex; gap:20px; align-items:flex-start;}
+.current-ticket{
+  font-family:'Source Serif 4', serif; font-size:2.1rem; font-weight:700;
+  color:var(--blue); flex:none;
+}
+.current-details h3{font-size:1.15rem; margin-bottom:10px;}
+.current-meta{display:flex; flex-wrap:wrap; gap:14px; color:var(--muted); font-size:.86rem; margin-bottom:18px;}
+.current-meta i{color:var(--blue); margin-right:4px;}
+.current-actions{display:flex; gap:12px; flex-wrap:wrap;}
+
+/* --- Empty state (no current patient / empty queue) --- */
+.current-empty{text-align:center; padding:24px 10px;}
+.current-empty i{font-size:32px; color:var(--line); margin-bottom:12px; display:block;}
+.current-empty p{color:var(--muted); margin-bottom:16px;}
+
+/* --- "Up Next" waiting list rows --- */
+.queue-row{display:flex; align-items:center; gap:14px; padding:14px 0; border-bottom:1px solid var(--line);}
+.queue-row:last-child{border-bottom:none;}
+.queue-ticket{
+  width:44px; height:44px; border-radius:10px;
+  background:var(--blue-light); color:var(--blue);
+  font-weight:700; font-size:.88rem;
+  display:flex; align-items:center; justify-content:center; flex:none;
+}
+.queue-info{flex:1; display:flex; flex-direction:column; gap:2px; min-width:0;}
+.queue-info strong{color:var(--navy-deep); font-size:.95rem;}
+.queue-info span{color:var(--muted); font-size:.82rem;}
+.queue-empty{text-align:center; padding:28px 10px; color:var(--muted);}
+.queue-empty i{font-size:28px; color:var(--line); margin-bottom:10px; display:block;}
+
+.btn-sm{padding:8px 14px; font-size:.82rem;}
+
+/* --- Responsive --- */
+@media (max-width:900px){
+  .dashboard-grid{grid-template-columns:1fr;}
+}
+@media (max-width:600px){
+  .stats-grid{grid-template-columns:1fr;}
+  .current-patient{flex-direction:column;}
+  .queue-row{flex-wrap:wrap;}
+}
+
+/* ==========================================================================
+   END DOCTOR DASHBOARD
+   ========================================================================== */
+
+/* ==========================================================================
+   TRACK APPOINTMENT (patient status check)
+   Edit only within this block to change this page's look.
+   ========================================================================== */
+
+/* --- Link inside the booking confirmation message ("Check your status anytime") --- */
+.result-link{
+  display:inline-flex; align-items:center; gap:6px;
+  color:var(--blue); font-weight:600; font-size:.88rem;
+}
+.result-link:hover{text-decoration:underline;}
+
+/* --- Wrapper for the list of matched appointments --- */
+.status-results{padding:0 40px 40px;}
+.status-results .booking-result{margin-top:0;}
+
+/* --- One matched appointment --- */
+.status-card{
+  border:1px solid var(--line); border-radius:12px;
+  padding:18px 20px; margin-bottom:14px;
+  background:var(--white);
+}
+.status-card:last-child{margin-bottom:0;}
+
+.status-card-head{display:flex; align-items:center; gap:14px;}
+.status-ticket{
+  font-family:'Source Serif 4', serif; font-size:1.3rem; font-weight:700;
+  color:var(--blue); flex:none;
+}
+.status-card-title{flex:1; min-width:0;}
+.status-card-title strong{display:block; color:var(--navy-deep); font-size:.95rem;}
+.status-card-title span{color:var(--muted); font-size:.82rem;}
+
+.status-card-body{margin-top:10px; padding-top:10px; border-top:1px solid var(--line);}
+.status-card-body p{color:var(--muted); font-size:.88rem;}
+
+/* --- Status pill colors --- */
+.status-pill{
+  flex:none;
+  font-size:.72rem; font-weight:700; text-transform:uppercase; letter-spacing:.02em;
+  padding:4px 10px; border-radius:999px;
+}
+.status-pill.waiting{background:var(--blue-light); color:var(--blue);}
+.status-pill.in-progress{background:#FFF3D6; color:#8A6404;}
+.status-pill.done{background:#E7F7EE; color:#1F9254;}
+.status-pill.skipped{background:#FCEAEA; color:#D64545;}
+
+/* --- Responsive --- */
+@media (max-width:600px){
+  .status-results{padding:0 24px 32px;}
+  .status-card-head{flex-wrap:wrap;}
+}
+
+/* --- "Doctor not available at due time" note, and the reassign/cancel
+   choice offered to the patient (never auto-substituted) --- */
+.unavailable-msg{color:#D64545; font-weight:600;}
+.muted-note{color:var(--muted); font-size:.85rem; margin-top:4px;}
+.reassign-label{color:var(--navy-deep); font-weight:600; font-size:.88rem; margin:12px 0 10px;}
+.status-card-body .doctor-pick-list{margin-bottom:14px;}
+
+/* ==========================================================================
+   END TRACK APPOINTMENT
+   ========================================================================== */

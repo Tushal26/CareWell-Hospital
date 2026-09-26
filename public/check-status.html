@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Track Appointment — CareWell Hospital</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+  <div class="nav wrap">
+    <div class="brand">
+      <div class="brand-name"><span class="brand-accent">Care</span>Well <span class="brand-accent">Hospital</span></div>
+      <div class="brand-tag">Health Today. A Brighter Tomorrow.</div>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <div class="nav-panel" id="navPanel">
+      <nav class="links">
+        <a href="index.html">Home</a>
+        <a href="index.html#about">About Us</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#why">Departments</a>
+        <a href="index.html#contact">Contact</a>
+        <a href="check-status.html" class="active">Track Appointment</a>
+      </nav>
+      <a href="doctor-login.html" class="btn btn-primary nav-cta">
+        <i class="fa-solid fa-user-doctor btn-icon"></i>
+        Doctor Login
+      </a>
+    </div>
+  </div>
+</header>
+
+<section class="booking-section">
+  <div class="wrap">
+    <div class="booking-card">
+
+      <div class="booking-card-head">
+        <h1>Track Your Appointment</h1>
+        <p>Enter the phone number you booked with to see your live queue status.</p>
+      </div>
+
+      <form class="booking-form" id="statusForm">
+
+        <div class="form-group">
+          <label for="statusPhone">Phone Number <span class="req">*</span></label>
+          <div class="input-wrap">
+            <i class="fa-solid fa-phone input-icon"></i>
+            <input type="tel" id="statusPhone" name="statusPhone" placeholder="Enter the phone number you booked with" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="statusName">Full Name <span class="opt">(Optional, for a more exact match)</span></label>
+          <div class="input-wrap">
+            <i class="fa-solid fa-user input-icon"></i>
+            <input type="text" id="statusName" name="statusName" placeholder="Enter the name used at booking">
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block">Check Status</button>
+
+      </form>
+
+      <div id="statusResults" class="status-results" hidden></div>
+
+    </div>
+  </div>
+</section>
+
+<footer id="about">
+  <div class="wrap footer-top">
+    <div>
+      <div class="f-brand">CareWell Hospital</div>
+      <p class="f-desc">Health Today. A Brighter Tomorrow.</p>
+    </div>
+    <nav class="f-links">
+      <a href="index.html">Home</a>
+      <a href="index.html#about">About Us</a>
+      <a href="index.html#services">Services</a>
+      <a href="index.html#why">Departments</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+    <div class="f-social">
+      <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+      <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+      <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+      <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+    </div>
+  </div>
+  <div class="wrap f-bottom">
+    <span>© 2026 CareWell Hospital. All rights reserved.</span>
+    <span>Privacy Policy &nbsp;|&nbsp; Terms &amp; Conditions</span>
+  </div>
+</footer>
+
+<script src="patient.js"></script>
+</body>
+</html>

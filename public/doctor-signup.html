@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Doctor Sign Up — CareWell Hospital</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+  <div class="nav wrap">
+    <div class="brand">
+      <div class="brand-name"><span class="brand-accent">Care</span>Well <span class="brand-accent">Hospital</span></div>
+      <div class="brand-tag">Health Today. A Brighter Tomorrow.</div>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <div class="nav-panel" id="navPanel">
+      <nav class="links">
+        <a href="index.html">Home</a>
+        <a href="index.html#about">About Us</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#why">Departments</a>
+        <a href="index.html#contact">Contact</a>
+        <a href="check-status.html">Track Appointment</a>
+      </nav>
+      <a href="doctor-login.html" class="btn btn-primary nav-cta">
+        <i class="fa-solid fa-user-doctor btn-icon"></i>
+        Doctor Login
+      </a>
+    </div>
+  </div>
+</header>
+
+<section class="auth-section">
+  <div class="wrap">
+    <div class="auth-wrap">
+
+      <a href="doctor-login.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> Back to Login</a>
+
+      <div class="booking-card auth-card">
+
+        <div class="booking-card-head">
+          <p class="eyebrow">Doctor Registration</p>
+          <h1>Create Your Account</h1>
+          <p>Register once to manage your patient queue from your dashboard.</p>
+        </div>
+
+        <form class="booking-form" id="doctorSignupForm">
+
+          <div class="form-group">
+            <label for="fullName">Full Name</label>
+            <div class="input-wrap">
+              <i class="fa-solid fa-user input-icon"></i>
+              <input type="text" id="fullName" name="fullName" placeholder="Dr. Jane Smith" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="degree">Degree</label>
+            <div class="input-wrap">
+              <i class="fa-solid fa-graduation-cap input-icon"></i>
+              <input type="text" id="degree" name="degree" placeholder="e.g. MBBS, MD" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="specialty">Specialty</label>
+            <div class="input-wrap">
+              <i class="fa-solid fa-stethoscope input-icon"></i>
+              <select id="specialty" name="specialty" required>
+                <option value="" disabled selected>Select specialty</option>
+                <option value="general">General Medicine</option>
+                <option value="cardiology">Cardiology</option>
+                <option value="neurology">Neurology</option>
+                <option value="maternity">Maternity &amp; Child Care</option>
+                <option value="surgery">Surgery</option>
+                <option value="diagnostics">Pathology &amp; Diagnostics</option>
+              </select>
+              <i class="fa-solid fa-chevron-down select-caret"></i>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="signupUsername">Username</label>
+            <div class="input-wrap">
+              <i class="fa-solid fa-id-badge input-icon"></i>
+              <input type="text" id="signupUsername" name="username" placeholder="Choose a username" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="signupPassword">Password</label>
+            <div class="input-wrap">
+              <i class="fa-solid fa-lock input-icon"></i>
+              <input type="password" id="signupPassword" name="password" placeholder="Choose a password" required>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block">Sign Up</button>
+
+          <div id="signupResult" class="booking-result" hidden></div>
+
+          <p class="auth-footnote">Already have an account? <a href="doctor-login.html">Log in</a></p>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="about">
+  <div class="wrap footer-top">
+    <div>
+      <div class="f-brand">CareWell Hospital</div>
+      <p class="f-desc">Health Today. A Brighter Tomorrow.</p>
+    </div>
+    <nav class="f-links">
+      <a href="index.html">Home</a>
+      <a href="index.html#about">About Us</a>
+      <a href="index.html#services">Services</a>
+      <a href="index.html#why">Departments</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+    <div class="f-social">
+      <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+      <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+      <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+      <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+    </div>
+  </div>
+  <div class="wrap f-bottom">
+    <span>© 2026 CareWell Hospital. All rights reserved.</span>
+    <span>Privacy Policy &nbsp;|&nbsp; Terms &amp; Conditions</span>
+  </div>
+</footer>
+
+<script src="doctor.js"></script>
+</body>
+</html>

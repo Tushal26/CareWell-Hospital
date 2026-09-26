@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Book Appointment — CareWell Hospital</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+  <div class="nav wrap">
+    <div class="brand">
+      <div class="brand-name"><span class="brand-accent">Care</span>Well <span class="brand-accent">Hospital</span></div>
+      <div class="brand-tag">Health Today. A Brighter Tomorrow.</div>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <div class="nav-panel" id="navPanel">
+      <nav class="links">
+        <a href="index.html">Home</a>
+        <a href="index.html#about">About Us</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#why">Departments</a>
+        <a href="index.html#contact">Contact</a>
+        <a href="check-status.html">Track Appointment</a>
+      </nav>
+      <a href="doctor-login.html" class="btn btn-primary nav-cta">
+        <i class="fa-solid fa-user-doctor btn-icon"></i>
+        Doctor Login
+      </a>
+    </div>
+  </div>
+</header>
+
+<section class="booking-section">
+  <div class="wrap">
+    <div class="booking-card">
+
+      <div class="booking-card-head">
+        <h1>Book Appointment</h1>
+        <p>Fill in the details below to schedule your appointment with our doctors.</p>
+      </div>
+
+      <form class="booking-form" id="bookingForm">
+
+        <div class="form-group">
+          <label for="fullName">Full Name <span class="req">*</span></label>
+          <div class="input-wrap">
+            <i class="fa-solid fa-user input-icon"></i>
+            <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="phone">Phone Number <span class="req">*</span></label>
+            <div class="input-wrap">
+              <i class="fa-solid fa-phone input-icon"></i>
+              <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="age">Age <span class="req">*</span></label>
+            <div class="input-wrap">
+              <i class="fa-solid fa-cake-candles input-icon"></i>
+              <input type="number" id="age" name="age" placeholder="Enter your age" min="0" max="120" required>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="doctor">Select Specialty <span class="req">*</span></label>
+          <div class="input-wrap">
+            <i class="fa-solid fa-user-doctor input-icon"></i>
+            <select id="doctor" name="doctor" required>
+              <option value="" disabled selected>Choose a specialty</option>
+              <option value="general">General Medicine</option>
+              <option value="cardiology">Cardiology</option>
+              <option value="neurology">Neurology</option>
+              <option value="maternity">Maternity &amp; Child Care</option>
+              <option value="surgery">Surgery</option>
+              <option value="diagnostics">Pathology &amp; Diagnostics</option>
+            </select>
+            <i class="fa-solid fa-chevron-down select-caret"></i>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="date">Preferred Date <span class="opt">(Optional)</span></label>
+            <div class="input-wrap">
+              <i class="fa-solid fa-calendar-days input-icon"></i>
+              <input type="date" id="date" name="date">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="time">Preferred Time <span class="opt">(Optional)</span></label>
+            <div class="input-wrap">
+              <i class="fa-solid fa-clock input-icon"></i>
+              <input type="text" id="time" name="time" placeholder="e.g. 10:30 AM" pattern="^(0?[1-9]|1[0-2]):[0-5][0-9]\s?(AM|PM|am|pm)$" title="Enter time like 10:30 AM">
+            </div>
+          </div>
+        </div>
+
+        <p class="form-hint">Not sure yet? Leave the date and time blank and we'll show you which doctors are available right now.</p>
+
+        <button type="submit" class="btn btn-primary btn-block">Find a Doctor</button>
+
+        <div id="doctorPicker" class="doctor-picker" hidden></div>
+
+        <div id="bookingResult" class="booking-result" hidden></div>
+
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer id="about">
+  <div class="wrap footer-top">
+    <div>
+      <div class="f-brand">CareWell Hospital</div>
+      <p class="f-desc">Health Today. A Brighter Tomorrow.</p>
+    </div>
+    <nav class="f-links">
+      <a href="index.html">Home</a>
+      <a href="index.html#about">About Us</a>
+      <a href="index.html#services">Services</a>
+      <a href="index.html#why">Departments</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+    <div class="f-social">
+      <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+      <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+      <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+      <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+    </div>
+  </div>
+  <div class="wrap f-bottom">
+    <span>© 2026 CareWell Hospital. All rights reserved.</span>
+    <span>Privacy Policy &nbsp;|&nbsp; Terms &amp; Conditions</span>
+  </div>
+</footer>
+
+<script src="patient.js"></script>
+</body>
+</html>
