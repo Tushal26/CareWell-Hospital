@@ -160,7 +160,7 @@ public class Server {
     public static void main(String[] args) throws IOException {
         loadData();
 
-        int port = 8080;
+        int port = Integer.parseInt(System.getenv().getOrDefault("PORT","8080"));
         HttpServer server = HttpServer.create(new InetSocketAddress(port), 0);
 
         server.createContext("/", new StaticFileHandler());
